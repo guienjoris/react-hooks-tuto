@@ -4,8 +4,8 @@ const ClientEdit = ({clientToEdit,editStatus,onClientUpdate,cancel})=>{
     const [updateClient,setUpdateClient] = useState({
         nom: clientToEdit.nom,
         id: clientToEdit.id
-    })
-    
+    });
+    let result ='';
     const handleChange = event =>{
         setUpdateClient({nom: event.currentTarget.value , id:clientToEdit.id})
     }
@@ -17,19 +17,19 @@ const ClientEdit = ({clientToEdit,editStatus,onClientUpdate,cancel})=>{
         setUpdateClient({nom:'',id:0})
         cancel();
     };
-    
     if(editStatus === true){
-    return(<form onSubmit={handleSubmit}>
+        result =<form onSubmit={handleSubmit}>
         Nouvelle valeur:
-        <input value={updateClient.nom} 
-        onChange={handleChange} 
+        <input onChange={handleChange} 
         type="text" />
         <button>Editer</button>
         <button onClick={cancel}>Annuler</button>
-    </form>)
-}else{
-    return("")
-}
+        </form>
+    }else{
+        result='';
+    }
+    return(result)
+
 }
 
 export default ClientEdit;

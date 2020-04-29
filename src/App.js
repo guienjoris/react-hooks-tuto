@@ -49,6 +49,7 @@ const App= ()=> {
       <Client details={client} 
       onDelete={handleDelete}
       onEdit ={handleEdit}
+      key= {client.id}
       />
     )}
       </ul>

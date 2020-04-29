@@ -14,7 +14,6 @@ const ClientForm = ({onClientAdd})=>{
     };
         return( <form onSubmit={handleSubmit}>
             <input 
-            value={nouveauClient} 
             onChange={handleChange} 
             type="text" 
             placeholder="Ajouter un client"/>
